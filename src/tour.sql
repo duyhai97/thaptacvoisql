@@ -119,13 +119,13 @@ select ten_thanhpho, count(tour_id) as 'tổng số tour' from hoadondattour
                                                                join thanhpho t on t.id_thanhpho = k.thanhpho_IDKH
 group by ten_thanhpho;
 
-# tinh so tuor co ngay bat dau trong thang 3
-select count(month(ngaybatdau)) as 'Số tour có ngày bắt đầu trong tháng 3' from Tour
-where month(ngaybatdau) = 3;
+# tinh so tuor co ngay bat dau trong thang 3/2020
+select count(month(ngaybatdau)) as 'Số tour có ngày bắt đầu trong tháng 3/2020' from Tour
+where month(ngaybatdau)  = 3 and year(ngaybatdau) = 2020;
 
-# tinh so tour co ngay ket thuc trong thang 4
-select count(month(ngayketthuc)) as 'Số tour có ngày kết thúc trong tháng 4' from tour
-where month(ngayketthuc) = 4 ;
+# tinh so tour co ngay ket thuc trong thang 4/2020
+select count(month(ngayketthuc)) as 'Số tour có ngày kết thúc trong tháng 4/2020' from tour
+where month(ngayketthuc) = 4 and year(ngayketthuc) = 2020;
 
 
 
