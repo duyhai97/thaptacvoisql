@@ -114,18 +114,68 @@ select ten_thanhpho , ten_diemden from diemdendulich
                                            join thanhpho t on t.id_thanhpho = diemdendulich.thanhppho_ID;
 
 # tinh so tour cua cacc thanh pho
-select ten_thanhpho, count(tour_id) from hoadondattour
-                                             join khachhang k on k.id_khachhang = hoadondattour.khachhang_id
-                                             join thanhpho t on t.id_thanhpho = k.thanhpho_IDKH
+select ten_thanhpho, count(tour_id) as 'tổng số tour' from hoadondattour
+                                                               join khachhang k on k.id_khachhang = hoadondattour.khachhang_id
+                                                               join thanhpho t on t.id_thanhpho = k.thanhpho_IDKH
 group by ten_thanhpho;
 
 # tinh so tuor co ngay bat dau trong thang 3
-select count(month(ngaybatdau)) from Tour
+select count(month(ngaybatdau)) as 'Số tour có ngày bắt đầu trong tháng 3' from Tour
 where month(ngaybatdau) = 3;
 
 # tinh so tour co ngay ket thuc trong thang 4
-select count(month(ngayketthuc)) from tour
-where month(ngayketthuc) = 4;
+select count(month(ngayketthuc)) as 'Số tour có ngày kết thúc trong tháng 4' from tour
+where month(ngayketthuc) = 4 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
