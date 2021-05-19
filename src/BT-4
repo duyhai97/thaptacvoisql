@@ -1,0 +1,15 @@
+use qlsv1;
+
+select * from subject
+where credit >= all (select credit from subject);
+
+select subID,subName,credit,mark from subject
+join mark m on subject.subID = m.subID_Ngoai
+where mark >= all (select mark from mark);
+
+select studentID,studentName,address,phone,status, avg(mark) as diemtb from student
+join mark m on student.studentID = m.studentID_Ngoai
+group by studentID, studentName, address, phone, status
+order by diemtb desc ;
+
+
